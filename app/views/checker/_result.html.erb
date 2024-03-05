@@ -1,0 +1,10 @@
+<turbo-frame id="result">
+  <% if @similarity_percentage %>
+    <h2>Similarity Percentage: <%= @similarity_percentage.round(2) %>%</h2>
+    <% if @similarity_percentage > 50 %>
+      <p>Possible plagiarism detected!</p>
+    <% else %>
+      <p>No significant plagiarism detected.</p>
+    <% end %>
+  <% end %>
+</turbo-frame>

@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: ror
+  password: 1234
+
+development:
+  <<: *default
+  database: plagarism_checker_dev
+
+test:
+  <<: *default
+  database: plagarism_checker_test
+
+production:
+  <<: *default
+  database: plagarism_checker_prod
+  username: your_postgresql_username
+  password: your_postgresql_password
